@@ -206,3 +206,53 @@
   font-size: 100pt;
   margin-top: 55px;
 }
+
+body
+{
+  background-color:gray;
+}
+
+#root
+{
+  width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 10px 1px rgb(0 0 0 / 30%);
+}
+
+.page-content
+{
+  background-color: #e6f2fd;
+}
+
+.navbar
+{
+background-color:white;
+}
+
+.list ul
+{
+  background-color:transparent !important;
+}
+
+.item-input-wrap
+{
+  background-color:white;
+}
+
+.TaskStatus
+{
+  margin-left:15px;
+  margin-right:15px;
+  background-color:white;
+}
+
+.search-list .item-title
+{
+  display:none;
+}
+
+.card
+{
+  width:100%;
+}

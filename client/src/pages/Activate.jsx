@@ -12,7 +12,7 @@ export default () => {
         <Page name="activate">
             <Navbar>
                 <NavLeft backLink="Back"></NavLeft>
-                <NavTitle>User Authentication</NavTitle>
+                <NavTitle>ToDo App</NavTitle>
                 <NavRight>
                     <Link panelOpen="left">
                         <span class="material-icons">

@@ -4,6 +4,9 @@ import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 import Login  from './pages/Login';
 import Activate from './pages/Activate';
+import NewTask from './pages/NewTask'; 
+import Tasks from './pages/Tasks'; 
+import TaskDetail from './pages/TaskDetail'; 
 
 
 // Pages
@@ -33,5 +36,17 @@ export default [
     {
       path: '/activate/',
       component: Activate,
+    },
+    {
+      path:'/newtask/',
+      component: NewTask,
+    },
+    {
+      path:'/tasks/',
+      component: Tasks,
+    },
+    {
+      path:'/taskdetail/:taskid/',
+      component: TaskDetail,
     }
 ]

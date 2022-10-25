@@ -29,13 +29,14 @@ export default ({ f7router }) => {
     }
     useEffect(() => {
         f7ready((f7) => {
+            localStorage.removeItem("Auth"); 
             captchaRef.current.reset();
         })
     }, []);
     return (<Page name="login">
         <Navbar>
             <NavLeft backLink="Back"></NavLeft>
-            <NavTitle>User Authentication</NavTitle>
+            <NavTitle>ToDo App</NavTitle>
             <NavRight>
                 <Link panelOpen="left">
                     <span class="material-icons">

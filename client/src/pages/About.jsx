@@ -5,7 +5,7 @@ export default () => (
   <Page name="about">
     <Navbar>
     <NavLeft backLink="Back"></NavLeft>
-      <NavTitle>User Authentication</NavTitle>
+      <NavTitle>ToDo App</NavTitle>
       <NavRight>
         <Link panelOpen="left">
           <span class="material-icons">

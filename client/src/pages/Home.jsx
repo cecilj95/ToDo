@@ -15,7 +15,7 @@ export default ({ f7router }) => {
     });
   return (<Page id="panel-page">
     <Navbar>
-      <NavTitle>User Authentication</NavTitle>
+      <NavTitle>ToDo App</NavTitle>
       <NavRight>
         <Link panelOpen="left">
           <span class="material-icons">
@@ -24,12 +24,12 @@ export default ({ f7router }) => {
         </Link>
       </NavRight>
     </Navbar>
-    <div class="IntroTitle">User Authentication</div>
+    <div class="IntroTitle">ToDo App</div>
     <div class="IntroImage"><span class="material-icons">
       lock
     </span></div>
     <div class="IntroLoginBtn"><a href="/login/" class="button button-round button-fill">Login</a></div>
     <div class="IntroSignupBtn">Not registered yet ? <a href="/signup/">Signup</a> now for free.</div>
-    <div class="IntroCopyright">Copyright 2022 Group30. All Rights Reserved.</div>
+    <div class="IntroCopyright">Copyright 2022 A2Group3. All Rights Reserved.</div>
   </Page>);
 }
