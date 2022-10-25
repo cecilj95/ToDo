@@ -16,13 +16,15 @@ export default ({ f7router }) => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
         }
-        fetch("http://localhost:5000/user/login", opts).then(response => response.json()).then(data=> {
+        localStorage.setItem("Auth",2);
+        f7router.navigate('/tasks/');
+        /*fetch("http://localhost:5000/user/login", opts).then(response => response.json()).then(data=> {
             f7.dialog.alert(data.message, "Authentication App")
             if (data.token) {
                 localStorage.setItem("Auth",data.user._id);
                 f7router.navigate('/profile/');
             }                
-        });
+        });*/
         captchaRef.current.reset();
         //send data to server
         //message authenticated

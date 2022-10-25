@@ -13,11 +13,9 @@ export default ({ f7router }) => {
                 headers: { "Content-Type": "application/json" },
                 //body: JSON.stringify(formData)
             }
-            fetch("https://auhz40r9vl.execute-api.us-east-2.amazonaws.com/test/newtask?user_id=2&title="+formData.title+"&description="+formData.description+"&tasktime="+formData.tasktime, opts).then(response => response.json()).then(data=> {
-                f7.dialog.alert("Task Created", "To Do")
-                if (data.user) {
-                    f7router.navigate('/tasks/');
-                }                
+            fetch("https://auhz40r9vl.execute-api.us-east-2.amazonaws.com/test/newtask?user_id=2&title="+formData.title+"&description="+formData.description+"&tasktime="+formData.tasktime, opts).then(() => {
+                f7.dialog.alert("Task Created", "To Do");
+                f7router.navigate('/tasks/');             
             });
         }
 return (<Page name="newtask">

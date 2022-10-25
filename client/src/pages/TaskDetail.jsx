@@ -10,16 +10,16 @@ export default (props) => {
   const [tasktime, Settasktime] = useState();
   useEffect(() => {
     f7ready((f7) => {
-      alert(props.taskid);
+      //alert(props.taskid);
       //.navigate('/tasks/');
       const userID = localStorage.getItem("Auth"); // Edit This with the userid wheather it comes from cookie or localstorage
       fetch("https://auhz40r9vl.execute-api.us-east-2.amazonaws.com/test/gettask?user_id=2&id=" + props.taskid)
         .then((response) => response.json())
         .then((data) => {
           //   Password = data.user.password;
-          Settasktitle(data.tasktitle);
-          Settaskdesc(data.taskdescription);
-          Settasktime(data.tasktime);
+          Settasktitle(data[0].title);
+          Settaskdesc(data[0].description);
+          Settasktime(data[0].tasktime);
         });
     });
   }, []);
@@ -32,7 +32,7 @@ export default (props) => {
       headers: { "Content-Type": "application/json" },
       //body: JSON.stringify(formData)
     }
-    fetch("https://auhz40r9vl.execute-api.us-east-2.amazonaws.com/test/updatetask?user_id=2&id=" + taskid + "&title=" + formData.title + "&description=" + formData.description + "&tasktime=" + formData.tasktime, opts).then(response => response.json()).then(data => {
+    fetch("https://auhz40r9vl.execute-api.us-east-2.amazonaws.com/test/updatetask?user_id=2&id=" + taskid + "&title=" + formData.title + "&description=" + formData.description + "&tasktime=" + formData.tasktime, opts).then(() => {
       f7.dialog.alert("Task updated", "To Do");
     });
   }
@@ -43,7 +43,7 @@ export default (props) => {
       headers: { "Content-Type": "application/json" },
       //body: JSON.stringify(formData)
     }
-    fetch("https://auhz40r9vl.execute-api.us-east-2.amazonaws.com/test/removetask?id=" + taskid + "&user_id=2", opts).then(response => response.json()).then(data => {
+    fetch("https://auhz40r9vl.execute-api.us-east-2.amazonaws.com/test/removetask?id=" + taskid + "&user_id=2", opts).then(() => {
       f7.dialog.alert("Task removed", "To Do");
     });
   }
@@ -54,7 +54,7 @@ export default (props) => {
       headers: { "Content-Type": "application/json" },
       //body: JSON.stringify(formData)
     }
-    fetch("https://auhz40r9vl.execute-api.us-east-2.amazonaws.com/test/completetask?id=" + taskid + "&user_id=2", opts).then(response => response.json()).then(data => {
+    fetch("https://auhz40r9vl.execute-api.us-east-2.amazonaws.com/test/completetask?id=" + taskid + "&user_id=2", opts).then(() => {
       f7.dialog.alert("Task completed", "To Do");
     });
   }
@@ -114,7 +114,9 @@ export default (props) => {
         <Row>
           <Col>
             <Button fill type="submit">Update Task</Button>
+            <br></br>
             <Button fill colorTheme='red' onClick={(e) => { DoRemoveTask() }}>Remove Task</Button>
+            <br></br>
             <Button fill colorTheme='green' onClick={(e) => { SetCompleteTask() }}>Complete Task</Button>
           </Col>
         </Row>
